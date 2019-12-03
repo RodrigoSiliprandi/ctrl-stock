@@ -1,0 +1,27 @@
+<%= form_with(model: operacao, local: true) do |form| %>
+  <% if operacao.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(operacao.errors.count, "error") %> prohibited this operacao from being saved:</h2>
+
+      <ul>
+      <% operacao.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :descricao %>
+    <%= form.text_field :descricao %>
+  </div>
+
+  <div class="field">
+    <%= form.label :tipo %>
+    <%= form.number_field :tipo %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

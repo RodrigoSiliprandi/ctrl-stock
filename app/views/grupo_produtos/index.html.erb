@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Grupo Produtos</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Nome</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @grupo_produtos.each do |grupo_produto| %>
+      <tr>
+        <td><%= grupo_produto.nome %></td>
+        <td><%= link_to 'Show', grupo_produto %></td>
+        <td><%= link_to 'Edit', edit_grupo_produto_path(grupo_produto) %></td>
+        <td><%= link_to 'Destroy', grupo_produto, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Grupo Produto', new_grupo_produto_path %>
